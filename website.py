@@ -14,32 +14,32 @@ import sqlite3
 #         writer.writerow([message])
 
 # Connect to SQLite database
-# conn = sqlite3.connect('messages.db')
-# cursor = conn.cursor()
+conn = sqlite3.connect('messages.db')
+cursor = conn.cursor()
 
-# # Create messages table if not exists
-# cursor.execute('''
-#     CREATE TABLE IF NOT EXISTS messages (
-#         id INTEGER PRIMARY KEY AUTOINCREMENT,
-#         message TEXT
-#     )
-# ''')
+# Create messages table if not exists
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS messages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        message TEXT
+    )
+''')
 
-# def save_to_database(message):
-#     cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
-#     conn.commit()
+def save_to_database(message):
+    cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
+    conn.commit()
 
 # def save_to_csv(message):
 #     with open('messages.csv', 'a', newline='') as file:
 #         writer = csv.writer(file)
 #         writer.writerow([message])
 
-def save_to_csv(message):
-    file_path = 'messages.csv'  # Assuming messages.csv is the filename
-    with open(file_path, 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([message])
-    st.write("File saved at:", file_path)  # Log file path
+# def save_to_csv(message):
+#     file_path = 'messages.csv'  # Assuming messages.csv is the filename
+#     with open(file_path, 'a', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow([message])
+#     st.write("File saved at:", file_path)  # Log file path
 
 
 # Main Page
@@ -80,8 +80,9 @@ def main_page():
         submit_button = st.form_submit_button("Ուղարկել նամակը")
     
     if submit_button:
+        save_to_database(message)
         # Save to CSV file
-        save_to_csv(message)  # No email provided
+        # save_to_csv(message)  # No email provided
         st.success("Message saved successfully!")
 
     # # Visualization: Number of posters over the years

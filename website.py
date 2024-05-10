@@ -29,10 +29,17 @@ import sqlite3
 #     cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
 #     conn.commit()
 
+# def save_to_csv(message):
+#     with open('messages.csv', 'a', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow([message])
+
 def save_to_csv(message):
-    with open('messages.csv', 'a', newline='') as file:
+    file_path = 'messages.csv'  # Assuming messages.csv is the filename
+    with open(file_path, 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([message])
+    st.write("File saved at:", file_path)  # Log file path
 
 
 # Main Page

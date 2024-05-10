@@ -14,25 +14,25 @@ import sqlite3
 #         writer.writerow([message])
 
 # Connect to SQLite database
-conn = sqlite3.connect('messages.db')
-cursor = conn.cursor()
+# conn = sqlite3.connect('messages.db')
+# cursor = conn.cursor()
 
-# Create messages table if not exists
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS messages (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        message TEXT
-    )
-''')
+# # Create messages table if not exists
+# cursor.execute('''
+#     CREATE TABLE IF NOT EXISTS messages (
+#         id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         message TEXT
+#     )
+# ''')
 
-def save_to_database(message):
-    cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
-    conn.commit()
+# def save_to_database(message):
+#     cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
+#     conn.commit()
 
-# def save_to_csv(message):
-#     with open('messages.csv', 'a', newline='') as file:
-#         writer = csv.writer(file)
-#         writer.writerow([message])
+def save_to_csv(message):
+    with open('messages.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([message])
 
 
 # Main Page

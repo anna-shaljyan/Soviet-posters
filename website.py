@@ -2,12 +2,21 @@ import streamlit as st
 import pandas as pd
 import csv
 from posters_info import posters_info
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE_PATH = os.path.join(BASE_DIR, 'messages.csv')
 
 def save_to_csv(message):
-    with open('messages.csv', 'a', newline='') as file:
+    with open(CSV_FILE_PATH, 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([message])
+
+
+# def save_to_csv(message):
+#     with open('messages.csv', 'a', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow([message])
 
 
 # Main Page

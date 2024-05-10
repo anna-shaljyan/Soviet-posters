@@ -3,15 +3,31 @@ import pandas as pd
 import csv
 from posters_info import posters_info
 import os
+import sqlite3
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_FILE_PATH = os.path.join(BASE_DIR, 'messages.csv')
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# CSV_FILE_PATH = os.path.join(BASE_DIR, 'messages.csv')
 
-def save_to_csv(message):
-    with open(CSV_FILE_PATH, 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([message])
+# def save_to_csv(message):
+#     with open(CSV_FILE_PATH, 'a', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow([message])
 
+# Connect to SQLite database
+conn = sqlite3.connect('messages.db')
+cursor = conn.cursor()
+
+# Create messages table if not exists
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS messages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        message TEXT
+    )
+''')
+
+def save_to_database(message):
+    cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
+    conn.commit()
 
 # def save_to_csv(message):
 #     with open('messages.csv', 'a', newline='') as file:

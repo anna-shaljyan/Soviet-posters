@@ -69,16 +69,22 @@ def main_page():
     # st.write("A brief description of the period of industrialization in the Soviet Union")
     st.image("mainpage.jpg", width=700)
 
+    st.subheader("Կոնտակտային ինֆորմացիա")
+    st.markdown("- Email: anna_shaljyan@edu.aua.am")
+    st.markdown("- Email: hovhannes_martirosyan@edu.aua.am")
+    st.markdown("- Email: sergey_tovmasyan@edu.aua.am")
+    st.markdown("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին:")
+
         # Contact form
-    with st.form(key='contact_form'):
-        # Contact information
-        st.subheader("Կոնտակտային ինֆորմացիա")
-        st.markdown("- Email: anna_shaljyan@edu.aua.am")
-        st.markdown("- Email: hovhannes_martirosyan@edu.aua.am")
-        st.markdown("- Email: sergey_tovmasyan@edu.aua.am")
-        st.markdown("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին:")
-        # message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին::")
-        # submit_button = st.form_submit_button("Ուղարկել նամակը")
+    # with st.form(key='contact_form'):
+    #     # Contact information
+    #     st.subheader("Կոնտակտային ինֆորմացիա")
+    #     st.markdown("- Email: anna_shaljyan@edu.aua.am")
+    #     st.markdown("- Email: hovhannes_martirosyan@edu.aua.am")
+    #     st.markdown("- Email: sergey_tovmasyan@edu.aua.am")
+    #     st.markdown("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին:")
+    #     message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին::")
+    #     submit_button = st.form_submit_button("Ուղարկել նամակը")
     
     # if submit_button:
     #     save_to_database(message)

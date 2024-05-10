@@ -14,20 +14,20 @@ import sqlite3
 #         writer.writerow([message])
 
 # Connect to SQLite database
-conn = sqlite3.connect('messages.db')
-cursor = conn.cursor()
+# conn = sqlite3.connect('messages.db')
+# cursor = conn.cursor()
 
-# Create messages table if not exists
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS messages (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        message TEXT
-    )
-''')
+# # Create messages table if not exists
+# cursor.execute('''
+#     CREATE TABLE IF NOT EXISTS messages (
+#         id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         message TEXT
+#     )
+# ''')
 
-def save_to_database(message):
-    cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
-    conn.commit()
+# def save_to_database(message):
+#     cursor.execute('INSERT INTO messages (message) VALUES (?)', (message,))
+#     conn.commit()
 
 # def save_to_csv(message):
 #     with open('messages.csv', 'a', newline='') as file:
@@ -76,14 +76,14 @@ def main_page():
         st.markdown("- Email: anna_shaljyan@edu.aua.am")
         st.markdown("- Email: hovhannes_martirosyan@edu.aua.am")
         st.markdown("- Email: sergey_tovmasyan@edu.aua.am")
-        message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ թողնելով նամակ ներքևի պատուհանում:")
-        submit_button = st.form_submit_button("Ուղարկել նամակը")
+        message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին::")
+        # submit_button = st.form_submit_button("Ուղարկել նամակը")
     
-    if submit_button:
-        save_to_database(message)
-        # Save to CSV file
-        # save_to_csv(message)  # No email provided
-        st.success("Message saved successfully!")
+    # if submit_button:
+    #     save_to_database(message)
+    #     # Save to CSV file
+    #     # save_to_csv(message)  # No email provided
+    #     st.success("Message saved successfully!")
 
     # # Visualization: Number of posters over the years
     # posters_per_year = posters_df["year"].value_counts().sort_index()

@@ -1016,7 +1016,7 @@ quiz_questions = [
                     "poster28_1946_mshakuyt.jpg", "poster29_1937_mshakuyt.jpg"],
         "options": ["Առաջին-պլակատը", "Երկրրորդ-պլակատը", 
                     "Երրորդ-պլակատը", "Չորրորդ-պլակատը"],
-        "correct_answer": "Երկրրորդ պլակատը",
+        "correct_answer": "Երկրրորդ-պլակատը",
         "points": 1
     },
         {

@@ -896,7 +896,7 @@ def schedule_page():
         filtered_posters = posters_df[(posters_df["year"] == selected_year) & (posters_df["theme"] == selected_theme)]
 
     # Display filtered posters
-    st.write("պաստառներ նշված տարվա և ենթաթեմայի համար:")
+    st.write("Պաստառներ նշված տարվա և ենթաթեմայի համար:")
     for index, row in filtered_posters.iterrows():
         st.image(row["image"], caption=row["text"], width=500)
         # st.image(row["image"])

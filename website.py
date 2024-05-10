@@ -76,7 +76,8 @@ def main_page():
         st.markdown("- Email: anna_shaljyan@edu.aua.am")
         st.markdown("- Email: hovhannes_martirosyan@edu.aua.am")
         st.markdown("- Email: sergey_tovmasyan@edu.aua.am")
-        message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին::")
+        st.markdown("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին:")
+        # message = st.text_area("Դուք կարող եք կապ հաստատել մեզ հետ՝ ուղարկելով նամակ նշված էլ. փոստերից որևէ մեկին::")
         # submit_button = st.form_submit_button("Ուղարկել նամակը")
     
     # if submit_button:

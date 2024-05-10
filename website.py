@@ -1004,7 +1004,7 @@ quiz_questions = [
         {
         "question": "Հետևյալ պլակատներից ո՞րը չի բնորոշում կանանց դերը արդյունաբերականացման գործընթացում:",
         "image": ["poster166_1931_kanayq.jpeg", "poster162_1931_gorc.jpeg", 
-                    "poster63_1929_kanancdery.jpg", "poster154_1937_ashxatanq.jpeg"],
+                    "poster63_1929_kanancdery.jpg", "poster154_1927_kanayq.jpeg"],
         "options": ["Առաջին պլակատը", "Երկրրորդ պլակատը", 
                     "Երրորդ պլակատը", "Չորրորդ պլակատը"],
         "correct_answer": "Երկրրորդ պլակատը",
